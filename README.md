@@ -4,6 +4,8 @@ Synchronized a directory to a s3 bucket. It makes the bucket identical to the `s
 Note that this means that remote files that are not in the `source-dir` are deleted. 
 The synchronized files will get an public access level.
 
+You can use application and deployment variables in wercker.
+
 ## Options
 
 * `key-id` (required) The Amazon Access key that will be used for authorization.
