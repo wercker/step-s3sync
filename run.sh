@@ -16,6 +16,11 @@ then
     fail 'missing or empty option bucket_url, please check wercker.yml'
 fi
 
+if [ ! -n "$WERCKER_S3SYNC_OPTS" ]
+then
+    export WERCKER_S3SYNC_OPTS="--acl-public"
+fi
+
 if ! type s3cmd &> /dev/null ;
 then
     info 's3cmd not found, start installing it'
@@ -49,8 +54,9 @@ fi
 info 'starting s3 synchronisation'
 
 set +e
-debug "s3cmd sync --acl-public --delete-removed --verbose './' '$WERCKER_S3SYNC_BUCKET_URL'"
-sync_output=$(s3cmd sync --acl-public --delete-removed --verbose "./" "$WERCKER_S3SYNC_BUCKET_URL")
+SYNC="s3cmd sync $WERCKER_S3SYNC_OPTS --delete-removed --verbose ./ $WERCKER_S3SYNC_BUCKET_URL"
+debug "$SYNC"
+sync_output=$($SYNC)
 
 if [[ $? -ne 0 ]];then
     warning $sync_output
