@@ -1,6 +1,6 @@
 # s3sync
 
-Synchronized a directory to a s3 bucket. It makes the bucket identical to the `source-dir`.
+Synchronize a directory to a s3 bucket. It makes the bucket identical to the `source-dir`.
 Note that this means that remote files that are not in the `source-dir` are deleted.
 The synchronized files will get an public access level.
 
