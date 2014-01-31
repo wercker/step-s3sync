@@ -6,7 +6,7 @@ The synchronized files will get an public access level.
 
 It is recommended that you use application and deployment variables in wercker, so you don't include any private keys in your code.
 
-[![wercker status](https://app.wercker.com/status/2064379a8b583cd1b5da16de3faa5583/m "wercker status")](https://app.wercker.com/project/bykey/2064379a8b583cd1b5da16de3faa5583)\
+[![wercker status](https://app.wercker.com/status/2064379a8b583cd1b5da16de3faa5583/m "wercker status")](https://app.wercker.com/project/bykey/2064379a8b583cd1b5da16de3faa5583)
 
 # What's new
 
