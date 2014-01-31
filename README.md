@@ -10,7 +10,7 @@ It is recommended that you use application and deployment variables in wercker, 
 
 # What's new
 
-- Add information about permissions to README.
+- Add information about permissions to the README.
 
 # Options
 
@@ -81,7 +81,7 @@ The MIT License (MIT)
 
 ## 1.0.0
 
-- Add information about permissions to README
+- Add information about permissions to the README
 
 ## 0.0.3
 
