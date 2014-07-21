@@ -10,7 +10,7 @@ It is recommended that you use application and deployment variables in wercker, 
 
 # What's new
 
-- Add information about permissions to the README.
+- Add `delete-removed` parameter
 
 # Options
 
@@ -18,6 +18,7 @@ It is recommended that you use application and deployment variables in wercker, 
 * `key-secret` (required) The Amazon Access secret that will be used for authorization.
 * `bucket-url` (required) The url of the bucket to sync to, like: `s3://wercker.com`
 * `source-dir` (optional, default: `./`) The directory to sync to the remote bucket.
+* `delete-removed` (optional, default: `true`) Add `--delete-remove` flag if this is `true`.
 * `opts` (optional, default: `--acl-public`) Arbitrary options provided to s3cmd. See `s3cmd --help` for more.
 
 # Example
@@ -78,6 +79,10 @@ It's a good idea to create a IAM user which just has enough permissions to be ab
 The MIT License (MIT)
 
 # Changelog
+
+## 1.1.0
+
+- Add `delete-removed` parameter
 
 ## 1.0.0
 
