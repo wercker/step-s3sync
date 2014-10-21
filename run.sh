@@ -69,7 +69,7 @@ debug "$SYNC"
 sync_output=$($SYNC)
 
 if [[ $? -ne 0 ]];then
-    warning $sync_output
+    warn $sync_output
     fail 's3cmd failed';
 else
     success 'finished s3 synchronisation';
