@@ -1,0 +1,42 @@
+box: wercker/default
+
+build:
+    steps:
+        - shellcheck:
+            files: run.sh
+
+        - script:
+            name: set version
+            code: |
+                export S3CMD_VERSION="1.5.1.2"
+                echo "Installing version $S3CMD_VERSION of s3cmd"
+
+        - script:
+            name: install pyinstaller
+            code: |
+                sudo pip install python-dateutil
+                sudo pip install pyinstaller
+
+        - script:
+            name: download s3cmd
+            code: |
+                curl -L https://github.com/s3tools/s3cmd/archive/v$S3CMD_VERSION.tar.gz > /tmp/s3cmd.tar.gz
+                mkdir /tmp/s3cmd/
+                tar xzvf /tmp/s3cmd.tar.gz -C /tmp/s3cmd/
+
+        - script:
+            name: pyinstaller
+            code: |
+                cd /tmp/s3cmd
+                pyinstaller -F --name=s3cmd /tmp/s3cmd/s3cmd-$S3CMD_VERSION/s3cmd
+
+        - script:
+            name: prepare output
+            code: |
+                mv /tmp/s3cmd/dist/s3cmd $WERCKER_ROOT/s3cmd
+                rm -rf $WERCKER_ROOT/.git
+                rm -f $WERCKER_ROOT/.gitignore
+
+        - script:
+            name: version
+            code: $WERCKER_ROOT/s3cmd --version
