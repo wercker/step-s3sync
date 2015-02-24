@@ -10,7 +10,10 @@ It is recommended that you use application and deployment variables in wercker, 
 
 # What's new
 
-- Add `delete-removed` parameter
+- Fix `source-dir` bug
+- Refactor run.sh
+- Update s3cmd to 1.5.1.2
+- Bundle s3cmd in step
 
 # Options
 
@@ -79,6 +82,16 @@ It's a good idea to create a IAM user which just has enough permissions to be ab
 The MIT License (MIT)
 
 # Changelog
+
+## 2.0.1
+
+- Fix `source-dir` bug
+
+## 2.0.0
+
+- Refactor run.sh
+- Update s3cmd to 1.5.1.2
+- Bundle s3cmd in step
 
 ## 1.1.0
 
