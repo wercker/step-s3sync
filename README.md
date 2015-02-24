@@ -59,7 +59,7 @@ It's a good idea to create a IAM user which just has enough permissions to be ab
 {
   "Statement": [
     {
-      "Action": [ 
+      "Action": [
         "s3:DeleteObject",
         "s3:GetObject",
         "s3:GetObjectAcl",
@@ -83,7 +83,7 @@ The MIT License (MIT)
 
 # Changelog
 
-## 2.0.1
+## 2.0.2
 
 - Fix `source-dir` bug
 

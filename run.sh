@@ -45,8 +45,16 @@ main() {
       export WERCKER_S3SYNC_DELETE_REMOVED="--delete-removed"
   fi
 
+  source_dir="$WERCKER_ROOT/$WERCKER_S3SYNC_SOURCE_DIR"
+  if cd "$source_dir";
+  then
+      debug "changed directory $source_dir, content is: $(ls -l)"
+  else
+      fail "unable to change directory to $source_dir"
+  fi
+
   set +e
-  local SYNC="cd $WERCKER_S3SYNC_SOURCE_DIR && $WERCKER_STEP_ROOT/s3cmd sync $WERCKER_S3SYNC_OPTS $WERCKER_S3SYNC_DELETE_REMOVED --verbose ./ $WERCKER_S3SYNC_BUCKET_URL"
+  local SYNC="$WERCKER_STEP_ROOT/s3cmd sync $WERCKER_S3SYNC_OPTS $WERCKER_S3SYNC_DELETE_REMOVED --verbose ./ $WERCKER_S3SYNC_BUCKET_URL"
   debug "$SYNC"
   local sync_output=$($SYNC)
 
