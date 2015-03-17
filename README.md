@@ -10,10 +10,7 @@ It is recommended that you use application and deployment variables in wercker, 
 
 # What's new
 
-- Fix `source-dir` bug
-- Refactor run.sh
-- Update s3cmd to 1.5.1.2
-- Bundle s3cmd in step
+- Always display s3cmd output
 
 # Options
 
@@ -82,6 +79,10 @@ It's a good idea to create a IAM user which just has enough permissions to be ab
 The MIT License (MIT)
 
 # Changelog
+
+## 2.0.3
+
+- Always display s3cmd output
 
 ## 2.0.2
 

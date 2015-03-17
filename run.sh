@@ -59,9 +59,10 @@ main() {
   local sync_output=$($SYNC)
 
   if [[ $? -ne 0 ]];then
-      warn "$sync_output"
+      echo "$sync_output"
       fail 's3cmd failed';
   else
+      echo "$sync_output"
       success 'finished s3 synchronisation';
   fi
   set -e
