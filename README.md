@@ -16,7 +16,7 @@ It is recommended that you use application and deployment variables in wercker, 
 
 * `key-id` (required) The Amazon Access key that will be used for authorization.
 * `key-secret` (required) The Amazon Access secret that will be used for authorization.
-* `bucket-url` (required) The url of the bucket to sync to, like: `s3://wercker.com`
+* `bucket-url` (required) The url of the bucket to sync to, like: `s3://wercker.com`, where `wercker.com` is the bucket name.
 * `source-dir` (optional, default: `./`) The directory to sync to the remote bucket.
 * `delete-removed` (optional, default: `true`) Add `--delete-remove` flag if this is `true`.
 * `opts` (optional, default: `--acl-public`) Arbitrary options provided to s3cmd. See `s3cmd --help` for more.
