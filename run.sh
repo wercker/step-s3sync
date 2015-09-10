@@ -45,8 +45,8 @@ main() {
       export WERCKER_S3SYNC_DELETE_REMOVED="--delete-removed"
   fi
 
-  source_dir="$WERCKER_ROOT/$WERCKER_S3SYNC_SOURCE_DIR"
-  if cd "$source_dir";
+  cd "$WERCKER_ROOT"
+  if cd "$WERCKER_S3SYNC_SOURCE_DIR";
   then
       debug "changed directory $source_dir, content is: $(ls -l)"
   else
