@@ -15,7 +15,7 @@ build:
             name: install pyinstaller
             code: |
                 sudo pip install python-dateutil
-                sudo pip install pyinstaller
+                sudo pip install pyinstaller==3.0
 
         - script:
             name: download s3cmd
