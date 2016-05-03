@@ -8,7 +8,7 @@ build:
         - script:
             name: set version
             code: |
-                export S3CMD_VERSION="1.5.1.2"
+                export S3CMD_VERSION="1.6.0"
                 echo "Installing version $S3CMD_VERSION of s3cmd"
 
         - script:
