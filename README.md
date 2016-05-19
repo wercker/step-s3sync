@@ -54,6 +54,7 @@ It's a good idea to create a IAM user which just has enough permissions to be ab
 
 ```
 {
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Action": [
