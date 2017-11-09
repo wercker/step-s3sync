@@ -1,4 +1,4 @@
-box: wercker/default
+box: debian:stable-slim
 
 build:
     steps:
@@ -11,11 +11,14 @@ build:
                 export S3CMD_VERSION="1.6.0"
                 echo "Installing version $S3CMD_VERSION of s3cmd"
 
+        - install-packages:
+            packages: curl python-pip
+
         - script:
             name: install pyinstaller
             code: |
                 sudo pip install python-dateutil
-                sudo pip install pyinstaller==3.0
+                sudo pip install pyinstaller==3.1
 
         - script:
             name: download s3cmd
@@ -40,3 +43,13 @@ build:
         - script:
             name: version
             code: $WERCKER_ROOT/s3cmd --version
+
+publish:
+  steps:
+    - install-packages:
+        packages: ca-certificates
+
+    - publish-step:
+        auth_token: $STEPS_AUTH_TOKEN
+        owner: wercker
+
