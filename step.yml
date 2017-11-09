@@ -1,0 +1,21 @@
+name: s3sync
+version: 2.2.0
+summary: s3sync step
+tags:
+- s3
+properties:
+- name: key_id
+  type: string
+  required: true
+- name: key_secret
+  type: string
+  required: true
+- name: bucket_url
+  type: string
+  required: true
+- name: delete_removed
+  type: string
+  required: false
+- name: source_dir
+  type: string
+  required: false
