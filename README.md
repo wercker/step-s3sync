@@ -81,6 +81,10 @@ The MIT License (MIT)
 
 # Changelog
 
+## 2.2.2
+
+- Update s3cmd to 1.6.1
+
 ## 2.0.3
 
 - Always display s3cmd output
