@@ -65,6 +65,22 @@ main() {
       echo "$sync_output"
       success 'finished s3 synchronisation';
   fi
+
+  if [ -n "$WERCKER_S3SYNC_ADDITIONAL_COMMAND" ]; then
+    debug "Executing additional command"
+    local ADDITIONAL="$WERCKER_STEP_ROOT/s3cmd $WERCKER_S3SYNC_ADDITIONAL_COMMAND"
+    debug "$ADDITIONAL"
+    local additional_output=$($ADDITIONAL)
+
+    if [[ $? -ne 0 ]];then
+        echo "$additional_output"
+        fail 's3cmd additional failed';
+    else
+        echo "$additional_output"
+        success 'finished s3 additional';
+    fi
+  fi
+
   set -e
 }
 
