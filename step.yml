@@ -19,3 +19,6 @@ properties:
 - name: source_dir
   type: string
   required: false
+- name: output_dir
+  type: string
+  required: false
