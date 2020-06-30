@@ -1,5 +1,5 @@
 name: s3sync
-version: 2.2.2
+version: 2.2.4
 summary: s3sync step
 tags:
 - s3
@@ -17,5 +17,8 @@ properties:
   type: string
   required: false
 - name: source_dir
+  type: string
+  required: false
+- name: output_dir
   type: string
   required: false
