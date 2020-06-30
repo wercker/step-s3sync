@@ -36,9 +36,9 @@ main() {
   fi
 
   if [ ! -n "$WERCKER_S3SYNC_OUTPUT_DIR" ]; then
-    export $WERCKER_S3SYNC_OUTPUT_DIR=""
+    export WERCKER_S3SYNC_OUTPUT_DIR=""
   else
-    export $WERCKER_S3SYNC_OUTPUT_DIR="/$WERCKER_S3SYNC_OUTPUT_DIR"
+    export WERCKER_S3SYNC_OUTPUT_DIR="/$WERCKER_S3SYNC_OUTPUT_DIR"
   fi
 
   if [ -n "$WERCKER_S3SYNC_DELETE_REMOVED" ]; then
